@@ -26,6 +26,7 @@ public class AnnotationStepsTest {
     @DisplayName("Тест с аннотациями")
     @Feature("Создание задачи в репозитории " + Repository)
     @Link(url = "https://github.com/", name = "Тестинг")
+
     public void githubCreateIssueTest() {
         BaseSteps steps = new BaseSteps();
         steps.openMainPage();
@@ -34,6 +35,7 @@ public class AnnotationStepsTest {
         steps.findCreateNewIssueButton();
         steps.fillRequiredFieldsAndCreateIssue();
         steps.checkCreatedIssue();
+        steps.deleteIssue();
     }
 
     public static class BaseSteps {
@@ -83,6 +85,14 @@ public class AnnotationStepsTest {
         public void checkCreatedIssue() {
             open("https://github.com/SoaD-git/QA_lesson_4/issues");
             $(withText(IssueName)).shouldHave(Condition.exist);
+        }
+
+        @Step("Удаляем созданную Issue")
+        public void deleteIssue() {
+            open("https://github.com/SoaD-git/QA_lesson_4/issues");
+            $(byText(IssueName)).click();
+            $(byText("Delete issue")).click();
+            $("[name='verify_delete']").click();
         }
     }
 }

@@ -59,5 +59,12 @@ public class LambdaStepsTest {
             open("https://github.com/SoaD-git/QA_lesson_4/issues");
             $(withText(IssueName)).shouldHave(Condition.exist);
         });
+
+        step("Удаляем созданную Issue", () -> {
+            open("https://github.com/SoaD-git/QA_lesson_4/issues");
+            $(byText(IssueName)).click();
+            $(byText("Delete issue")).click();
+            $("[name='verify_delete']").click();
+        });
     }
 }
