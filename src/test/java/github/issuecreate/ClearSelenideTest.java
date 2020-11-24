@@ -12,11 +12,10 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class ClearSelenideTest {
 
-    Credentials creds = new Credentials();
+    Credentials Cred = new Credentials();
     String IssueName = "TestIssue";
     String Assign = "SoaD-git";
     String Label1 = "bug";
-
 
     @Test
     public void githubCreateIssueTest() {
@@ -24,8 +23,8 @@ public class ClearSelenideTest {
         open("https://github.com/");
 
         $("[href='/login']").click();
-        $("#login_field").val(creds.getUser());
-        $("#password").val(creds.getPassword());
+        $("#login_field").val(Cred.getUser());
+        $("#password").val(Cred.getPassword());
         $("[name='commit']").click();
 
 
@@ -51,7 +50,5 @@ public class ClearSelenideTest {
 
         open("https://github.com/SoaD-git/QA_lesson_4/issues");
         $(withText(IssueName)).shouldHave(Condition.exist);
-
     }
-
 }

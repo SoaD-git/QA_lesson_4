@@ -13,23 +13,20 @@ import static io.qameta.allure.Allure.step;
 
 public class LambdaStepsTest {
 
-    Credentials creds = new Credentials();
+    Credentials Cred = new Credentials();
     String IssueName = "TestIssue";
     String Assign = "SoaD-git";
     String Label1 = "bug";
     String Repository = "SoaD-git/QA_lesson_4";
 
-
     @Test
     public void githubCreateIssueTest() {
-        step("Открываем главную стрницу", () -> {
-            open("https://github.com/");
-        });
+        step("Открываем главную стрницу", () -> open("https://github.com/"));
 
         step("Логинимся под пользователем", () -> {
             $("[href='/login']").click();
-            $("#login_field").val(creds.getUser());
-            $("#password").val(creds.getPassword());
+            $("#login_field").val(Cred.getUser());
+            $("#password").val(Cred.getPassword());
             $("[name='commit']").click();
         });
 

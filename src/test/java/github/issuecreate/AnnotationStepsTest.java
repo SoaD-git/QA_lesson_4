@@ -22,7 +22,6 @@ public class AnnotationStepsTest {
     private final static String Label1 = "bug";
     private final static String Repository = "SoaD-git/QA_lesson_4";
 
-
     @Test
     @DisplayName("Тест с аннотациями")
     @Feature("Создание задачи в репозитории " + Repository)
@@ -36,6 +35,7 @@ public class AnnotationStepsTest {
         steps.fillRequiredFieldsAndCreateIssue();
         steps.checkCreatedIssue();
     }
+
     public static class BaseSteps {
 
         @Step("Открываем главную стрницу")
@@ -48,7 +48,7 @@ public class AnnotationStepsTest {
             $("[href='/login']").click();
             $("#login_field").val(creds.getUser());
             $("#password").val(creds.getPassword());
-            $("[name='commit']").click();;
+            $("[name='commit']").click();
         }
 
         @Step("Находим нужный репозиторий " + Repository)
@@ -72,7 +72,6 @@ public class AnnotationStepsTest {
             $("#assignee-filter-field").val(Assign);
             $(".select-menu-item").$(byText(Assign)).click();
             $(".select-menu-item").sendKeys(Keys.ESCAPE);
-
             $(byText("Labels")).click();
             $("#label-filter-field").val(Label1);
             $(".label-select-menu-item").$(byText(Label1)).click();
