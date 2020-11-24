@@ -41,3 +41,4 @@ target/
 local.properties
 
 src/test/java/github/issuecreate/Credentials.java
+Credentials.java
