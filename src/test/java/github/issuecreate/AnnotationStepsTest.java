@@ -40,7 +40,7 @@ public class AnnotationStepsTest {
 
     public static class BaseSteps {
 
-        @Step("Открываем главную стрницу")
+        @Step("Открываем главную страницу")
         public void openMainPage() {
             open("https://github.com/");
         }

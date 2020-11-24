@@ -21,7 +21,7 @@ public class LambdaStepsTest {
 
     @Test
     public void githubCreateIssueTest() {
-        step("Открываем главную стрницу", () -> open("https://github.com/"));
+        step("Открываем главную страницу", () -> open("https://github.com/"));
 
         step("Логинимся под пользователем", () -> {
             $("[href='/login']").click();
