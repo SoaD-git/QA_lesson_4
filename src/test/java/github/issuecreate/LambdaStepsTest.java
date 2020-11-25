@@ -1,6 +1,9 @@
 package github.issuecreate;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -18,6 +21,11 @@ public class LambdaStepsTest {
     String Assign = "SoaD-git";
     String Label1 = "bug";
     String Repository = "SoaD-git/QA_lesson_4";
+
+    @BeforeEach
+    public void initSelenideListener() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
+    }
 
     @Test
     public void githubCreateIssueTest() {
