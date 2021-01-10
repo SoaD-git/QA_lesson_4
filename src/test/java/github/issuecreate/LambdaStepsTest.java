@@ -16,7 +16,7 @@ import static io.qameta.allure.Allure.step;
 
 public class LambdaStepsTest {
 
-    Credentials Cred = new Credentials();
+    Credentials creds = new Credentials();
     String IssueName = "TestIssue";
     String Assign = "SoaD-git";
     String Label1 = "bug";
@@ -33,8 +33,8 @@ public class LambdaStepsTest {
 
         step("Логинимся под пользователем", () -> {
             $("[href='/login']").click();
-            $("#login_field").val(Cred.getUser());
-            $("#password").val(Cred.getPassword());
+            $("#login_field").val(creds.getUser());
+            $("#password").val(creds.getPassword());
             $("[name='commit']").click();
         });
 

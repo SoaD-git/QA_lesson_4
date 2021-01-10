@@ -12,7 +12,7 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class ClearSelenideTest {
 
-    Credentials Cred = new Credentials();
+    Credentials creds = new Credentials();
     String IssueName = "TestIssue";
     String Assign = "SoaD-git";
     String Label1 = "bug";
@@ -23,8 +23,8 @@ public class ClearSelenideTest {
         open("https://github.com/");
 
         $("[href='/login']").click();
-        $("#login_field").val(Cred.getUser());
-        $("#password").val(Cred.getPassword());
+        $("#login_field").val(creds.getUser());
+        $("#password").val(creds.getPassword());
         $("[name='commit']").click();
 
 

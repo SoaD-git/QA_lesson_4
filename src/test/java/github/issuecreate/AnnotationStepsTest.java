@@ -26,7 +26,6 @@ public class AnnotationStepsTest {
     @DisplayName("Тест с аннотациями")
     @Feature("Создание задачи в репозитории " + Repository)
     @Link(url = "https://github.com/", name = "Тестинг")
-
     public void githubCreateIssueTest() {
         BaseSteps steps = new BaseSteps();
         steps.openMainPage();
